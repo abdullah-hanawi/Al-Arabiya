@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+ <html lang="ar" dir="rtl">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al Arabiya | العربية للحلول العقارية والمصاعد</title>
+    <style>
+        /* CSS RESET & VARIABLES */
+        :root {
+            --bg-color: #f7f9fa;
+            --surface-color: #ffffff;
+            --primary-dark: #1e293b;
+            --accent-muted: #475569;
+            --text-main: #334155;
+            --text-light: #64748b;
+            --border-color: #e2e8f0;
+            --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.03);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* LAYOUT & CONTAINERS */
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* HEADER & NAVIGATION (OPTIMIZED FOR MOBILE) */
+        header {
+            background-color: var(--surface-color);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 70px;
+            padding: 10px 0;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            letter-spacing: -0.5px;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: var(--text-light);
+            font-size: 0.85rem;
+            font-weight: 400;
+            margin-right: 4px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-dark);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 50px 0 60px;
+            text-align: center;
+            background-color: var(--surface-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* HERO IMAGE STYLE */
+        .hero-image-container {
+            max-width: 750px;
+            margin: 0 auto 28px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            color: var(--primary-dark);
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary-dark);
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background-color: var(--accent-muted);
+        }
+
+        /* SERVICES SECTION */
+        .services {
+            padding: 70px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background-color: var(--surface-color);
+            padding: 28px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            border-color: #cbd5e1;
+            transform: translateY(-2px);
+        }
+
+        .card h3 {
+            font-size: 1.15rem;
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .card p {
+            font-size: 0.92rem;
+            color: var(--text-light);
+        }
+
+        /* CONTACT FORM SECTION */
+        .contact {
+            padding: 70px 0;
+            background-color: var(--surface-color);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .form-container {
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.88rem;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-size: 0.95rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--accent-muted);
+            background-color: #ffffff;
+        }
+
+        .form-message {
+            margin-top: 16px;
+            font-size: 0.9rem;
+            text-align: center;
+            display: none;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 32px 0;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* MOBILE RESPONSIVE FIXES (تحسين مخصص للهاتف) */
+        @media (max-width: 650px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 12px;
+                padding: 14px 0;
+            }
+
+            .nav-links {
+                width: 100%;
+                justify-content: center;
+                gap: 16px;
+                border-top: 1px solid var(--border-color);
+                padding-top: 10px;
+            }
+
+            .nav-links a {
+                font-size: 0.88rem;
+                padding: 4px 6px;
+            }
+
+            .hero {
+                padding: 32px 0 40px;
+            }
+
+            .hero-image-container img {
+                height: 200px;
+            }
+
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+            }
+
+            .services, .contact {
+                padding: 50px 0;
+            }
+        }
+    </style>
+ </head>
+ <body>
+
+    <!-- NAVBAR (RESPONSIVE) -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">Al Arabiya <span>| العربية للحلول العقارية</span></div>
+            <ul class="nav-links">
+                <li><a href="#about">عن الشركة</a></li>
+                <li><a href="#services">الخدمات</a></li>
+                <li><a href="#contact">تواصل معنا</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- HERO SECTION WITH IMAGE & NEW TITLE -->
+    <section class="hero" id="about">
+        <div class="container">
+            
+            <!-- MODERN BUILDING / ELEVATOR IMAGE -->
+            <div class="hero-image-container">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80" alt="مبنى عصري - العربية للحلول العقارية">
+            </div>
+
+            <!-- NEW TITLE -->
+            <h1>العربية للحلول العقارية</h1>
+            <p>نقدم أحدث الحلول والأنظمة المتكاملة للمباني والمصاعد بأعلى معايير الأمان والدقة الهندسية لضمان استثمار عقاري عصري ومستدام.</p>
+            <a href="#contact" class="btn">طلب استشارة فنية</a>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">خدماتنا</h2>
+            <div class="services-grid">
+                <div class="card">
+                    <h3>التوريد والتركيب</h3>
+                    <p>تركيب أنظمة المصاعد والحلول العقارية الحديثة للمباني السكنية والتجارية بأحدث التقنيات.</p>
+                </div>
+                <div class="card">
+                    <h3>الصيانة الوقائية</h3>
+                    <p>برامج صيانة دورية شاملة لفحص المحركات، أنظمة الأمان، ولوحات التحكم لضمان الاستمرارية وتقليل الأعطال.</p>
+                </div>
+                <div class="card">
+                    <h3>التحديث والتطوير</h3>
+                    <p>تحديث المباني والمصاعد القديمة واستبدال الأنظمة بأنظمة ذكية لزيادة كفاءة الطاقة وتسهيل الحركة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">تواصل معنا</h2>
+            <div class="form-container">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">الاسم الكامل</label>
+                        <input type="text" id="name" required placeholder="أدخل اسمك">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">رقم الهاتف</label>
+                        <input type="tel" id="phone" required placeholder="01XXXXXXXXX">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">تفاصيل الطلب أو الاستفسار</label>
+                        <textarea id="message" rows="4" required placeholder="اكتب تفاصيل الاستفسار هنا..."></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">إرسال الطلب</button>
+                    <div class="form-message" id="formMessage"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Al Arabiya Solutions - جميع الحقوق محفوظة لشركة العربية للحلول العقارية.</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Smooth Scroll for Navigation Links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Form Handling Simulation
+            const contactForm = document.getElementById('contactForm');
+            const formMessage = document.getElementById('formMessage');
+
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                formMessage.style.display = 'block';
+                formMessage.style.color = '#334155';
+                formMessage.textContent = 'جاري تسجيل طلبك...';
+
+                setTimeout(() => {
+                    formMessage.style.color = '#059669';
+                    formMessage.textContent = 'تم استلام طلبك بنجاح. سيتواصل معك فريقنا قريبًا.';
+                    contactForm.reset();
+                }, 1200);
+            });
+        });
+    </script>
+ </body>
+ </html>
